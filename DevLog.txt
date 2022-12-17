@@ -1,6 +1,10 @@
 - TODO:
+  - Placing blocks.
   - 
 - Doing:
+  - Tile generation.
+  - Tile Selection.
   - 
 - Done:
+  - Camera Movement.
   - 
