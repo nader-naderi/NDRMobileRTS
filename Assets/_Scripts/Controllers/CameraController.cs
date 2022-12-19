@@ -41,9 +41,7 @@ namespace NDRIsometricRTS
 				int startX = Mathf.FloorToInt(dragStartPosition.x);
 				int startY = Mathf.FloorToInt(dragStartPosition.y);
 
-				Vector2 cartisanPosition = Map.IsometricToCartesian(new Vector2(startX, startY));
-
-				Tile selectedTile = MapController.Instance.GetTileAtWorldCoord(cartisanPosition.x, cartisanPosition.y);
+				Tile selectedTile = MapController.Instance.Map.GetTileAt(new Vector2Int(startX, startY));
 
 				if (selectedTile == null)
 				{
@@ -52,7 +50,8 @@ namespace NDRIsometricRTS
 				}
 
 				outline.SetActive(true);
-				outline.transform.position = new Vector3(startX, startY, 0);
+
+				outline.transform.localPosition = new Vector3(startX, startY, 0);
 			}
 		}
 
@@ -67,6 +66,20 @@ namespace NDRIsometricRTS
 			Camera.main.orthographicSize -= Camera.main.orthographicSize * Input.GetAxis("Mouse ScrollWheel");
 
 			Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize, 1f, 5f);
+		}
+
+		public void UpdateSelection(Vector3 position)
+		{
+			if (position == Vector3.zero)
+			{
+				outline.SetActive(false);
+				return;
+			}
+
+			outline.SetActive(true);
+
+
+			outline.transform.localPosition = position;
 		}
 	}
 }

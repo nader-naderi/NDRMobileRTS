@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5734552016423004117}
   - component: {fileID: 1351888961482028948}
+  - component: {fileID: 180599415528426833}
   m_Layer: 0
   m_Name: Tile (0)
   m_TagString: Untagged
@@ -82,3 +83,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!68 &180599415528426833
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932888688147617307}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.0032831728, y: -0.25806668}
+  - {x: -0.5071026, y: 0.0041075516}
+  - {x: 0.00044679362, y: 0.2568988}
+  - {x: 0.5082258, y: 0.003680624}
+  - {x: 0.0037285811, y: -0.25782505}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0

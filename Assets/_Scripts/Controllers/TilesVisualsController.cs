@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 using UnityEngine;
 
@@ -9,6 +10,7 @@ namespace NDRIsometricRTS
 		[SerializeField] private Sprite groundSprite;
 		[SerializeField] private Sprite floorSprite;
 		[SerializeField] private Sprite emptySprite;
+		[SerializeField] private CameraController cameraController;
 		
 		[SerializeField] private float tileSize = 1;
 
@@ -43,7 +45,10 @@ namespace NDRIsometricRTS
 					sprite.sprite = groundSprite;
 					sprite.sortingLayerName = "Tiles";
 
-					Map.TilesPositionMap[new Vector2(x, y)] = newTile;
+					int roundX = Mathf.FloorToInt(posX);
+					int roundY = Mathf.FloorToInt(posY);
+
+					Map.TilesPositionMap[new Vector2Int(roundX, roundY)] = newTile;
 				}
 			}
 
@@ -79,5 +84,7 @@ namespace NDRIsometricRTS
 					break;
 			}
 		}
+
+		
 	}
 }

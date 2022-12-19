@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 namespace NDRIsometricRTS
 {
@@ -15,7 +16,9 @@ namespace NDRIsometricRTS
 		
 		[SerializeField] private Vector2Int MapDimensions = new Vector2Int(50, 50);
 
-
+		[SerializeField] private GridLayout gridLayout;
+		[SerializeField] private Tilemap tilemap;
+		
 		public Map Map { get; private set; }
 
 
@@ -58,6 +61,9 @@ namespace NDRIsometricRTS
 			return Map.GetTileAt(finalX, finalY);
 		}
 
-		
+		public Tile GetTileAtWorldCoord(int x, int y)
+		{
+			return Map.GetTileAt(x, y);
+		}
 	}
 }

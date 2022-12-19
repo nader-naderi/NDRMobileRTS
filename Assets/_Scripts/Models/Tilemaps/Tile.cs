@@ -48,5 +48,10 @@ namespace NDRIsometricRTS
 		{
 			OnTileChanged -= callback;
 		}
+
+		public override string ToString()
+		{
+			return "X : " + x + ", Y : " + y;
+		}
 	}
 }

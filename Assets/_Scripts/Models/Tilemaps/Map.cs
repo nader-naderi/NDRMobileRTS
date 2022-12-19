@@ -11,7 +11,7 @@ namespace NDRIsometricRTS
 		private int width;
 		private int height;
 
-		public Dictionary<Vector2, Tile> TilesPositionMap { get; set; } = new Dictionary<Vector2, Tile>();
+		public Dictionary<Vector2Int, Tile> TilesPositionMap { get; private set; } = new Dictionary<Vector2Int, Tile>();
 
 
 		System.Action<Tile> onTileChangedCallBack;
@@ -46,6 +46,14 @@ namespace NDRIsometricRTS
 			}
 
 			return tiles[x, y];
+		}
+
+		public Tile GetTileAt(Vector2Int pos)
+		{
+			if (TilesPositionMap.ContainsKey(pos))
+				return TilesPositionMap[pos];
+
+			return null;
 		}
 
 		public void RegisterTileChanged(System.Action<Tile> callback) => onTileChangedCallBack += callback;
